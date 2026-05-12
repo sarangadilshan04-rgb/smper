@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAMARATHUNGA STORES - GIRIULLA</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+:root{
+    --bg:#050505;
+    --card:rgba(255,255,255,0.06);
+    --border:rgba(255,255,255,0.1);
+    --text:#ffffff;
+    --blue:#00e5ff;
+    --purple:#b84dff;
+    --gold:#ffcc70;
+    --red:#ff3b5f;
+    --green:#00d084;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    transition:0.4s;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%,
+    rgba(0,255,255,0.15),
+    transparent 25%),
+
+    radial-gradient(circle at 80% 30%,
+    rgba(184,77,255,0.15),
+    transparent 25%),
+
+    radial-gradient(circle at 50% 80%,
+    rgba(0,153,255,0.15),
+    transparent 25%);
+
+    animation:bgMove 10s linear infinite alternate;
+    z-index:-2;
+}
+
+@keyframes bgMove{
+    from{transform:translateY(0);}
+    to{transform:translateY(-50px);}
+}
+
+.particles span{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:cyan;
+    border-radius:50%;
+    animation:float 15s linear infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+
+    100%{
+        transform:translateY(-100vh) scale(1);
+        opacity:1;
+    }
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 30px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--blue);
+    text-shadow:0 0 15px cyan;
+}
+
+.search-box input{
+
+    width:250px;
+
+    padding:12px;
+
+    border:none;
+    outline:none;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+}
+
+.clock{
+    color:var(--gold);
+    font-weight:bold;
+}
+
+.toggle-btn{
+
+    background:linear-gradient(45deg,
+    var(--blue),
+    var(--purple));
+
+    border:none;
+
+    padding:12px 16px;
+
+    border-radius:15px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-bottom:30px;
+}
+
+.card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    transition:0.4s;
+
+    box-shadow:0 0 20px rgba(0,255,255,0.08);
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 25px cyan;
+}
+
+.card h3{
+
+    color:var(--blue);
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+.form-section{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+}
+
+.form-section h2{
+
+    margin-bottom:25px;
+
+    color:var(--blue);
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.form-grid input,
+.form-grid select{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.form-grid input:focus,
+.form-grid select:focus{
+
+    box-shadow:0 0 15px cyan;
+}
+
+select{
+
+    appearance:none;
+
+    cursor:pointer;
+
+    background-image:
+    linear-gradient(45deg,transparent 50%,cyan 50%),
+    linear-gradient(135deg,cyan 50%,transparent 50%);
+
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px);
+
+    background-size:5px 5px,5px 5px;
+
+    background-repeat:no-repeat;
+}
+
+option{
+    background:#111;
+    color:white;
+}
+
+.btn-group{
+
+    margin-top:25px;
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+button{
+
+    padding:14px 20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.add-btn{
+
+    background:
+    linear-gradient(45deg,
+    var(--blue),
+    var(--purple));
+
+    color:white;
+}
+
+.clear-btn{
+
+    background:
+    linear-gradient(45deg,
+    #ff512f,
+    #dd2476);
+
+    color:white;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px cyan;
+}
+
+.table-section{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    padding:20px;
+
+    overflow:auto;
+
+    margin-bottom:30px;
+}
+
+.table-section h2{
+
+    margin-bottom:15px;
+
+    color:var(--blue);
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th,td{
+
+    padding:14px;
+
+    text-align:center;
+}
+
+th{
+
+    background:rgba(0,255,255,0.12);
+
+    color:var(--blue);
+}
+
+tr{
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+tr:hover{
+
+    background:rgba(255,255,255,0.05);
+}
+
+.status-btn{
+
+    padding:8px 14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-weight:bold;
+}
+
+.light-mode{
+
+    --bg:#f3f7ff;
+    --card:rgba(255,255,255,0.9);
+    --border:rgba(0,0,0,0.08);
+    --text:#111111;
+}
+
+.light-mode body{
+
+    background:#f3f7ff;
+}
+
+.light-mode .card,
+.light-mode .form-section,
+.light-mode .table-section,
+.light-mode header{
+
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+}
+
+.light-mode input,
+.light-mode select{
+
+    background:#eef3ff;
+
+    color:#111;
+}
+
+.light-mode option{
+
+    background:white;
+
+    color:black;
+}
+
+.light-mode .search-box input{
+
+    background:#eef3ff;
+
+    color:black;
+}
+
+@media(max-width:768px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .search-box input{
+
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="particles">
+
+<span style="left:10%;animation-delay:0s;"></span>
+<span style="left:20%;animation-delay:2s;"></span>
+<span style="left:35%;animation-delay:4s;"></span>
+<span style="left:50%;animation-delay:1s;"></span>
+<span style="left:70%;animation-delay:3s;"></span>
+<span style="left:85%;animation-delay:5s;"></span>
+
+</div>
+
+<header>
+
+<div class="logo">
+<i class="fa-solid fa-store"></i>
+SAMARATHUNGA STORES - GIRIULLA
+</div>
+
+<div class="search-box">
+<input type="text"
+id="search"
+placeholder="Search Company...">
+</div>
+
+<div class="clock" id="clock"></div>
+
+<button class="toggle-btn"
+onclick="toggleMode()">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+</header>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Purchases</h3>
+<p id="totalPurchase">Rs. 0</p>
+</div>
+
+<div class="card">
+<h3>Total Credit Amount</h3>
+<p id="creditAmount">Rs. 0</p>
+</div>
+
+<div class="card">
+<h3>Total Paid Amount</h3>
+<p id="paidAmount">Rs. 0</p>
+</div>
+
+<div class="card">
+<h3>Remaining Credit</h3>
+<p id="remainingCredit">Rs. 0</p>
+</div>
+
+</div>
+
+<div class="form-section">
+
+<h2>Purchasing Entry Form</h2>
+
+<div style="margin-bottom:25px;">
+
+<h3 style="margin-bottom:10px;color:var(--blue);">
+Add Company
+</h3>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+
+<input type="text"
+id="newCompany"
+placeholder="Enter Company Name"
+
+style="
+padding:14px;
+border:none;
+border-radius:14px;
+background:rgba(255,255,255,0.08);
+color:white;
+width:300px;">
+
+<button class="add-btn"
+onclick="addCompany()">
+
+<i class="fa-solid fa-building"></i>
+Add Company
+
+</button>
+
+</div>
+
+</div>
+
+<div class="form-grid">
+
+<input type="date" id="date">
+
+<select id="company">
+<option value="">Select Company</option>
+</select>
+
+<input type="text"
+id="bill"
+placeholder="Bill Number">
+
+<input type="number"
+id="amount"
+placeholder="Total Bill Amount">
+
+<input type="number"
+id="paid"
+placeholder="Paid Amount">
+
+<input type="date"
+id="purchaseDate">
+
+<input type="date"
+id="paymentDate">
+
+<select id="method">
+<option>Cash</option>
+<option>Cheque</option>
+<option>Credit</option>
+<option>Bank Transfer</option>
+</select>
+
+</div>
+
+<div class="btn-group">
+
+<button class="add-btn"
+onclick="addPurchase()">
+
+<i class="fa-solid fa-plus"></i>
+Add Purchase
+
+</button>
+
+<button class="clear-btn"
+onclick="clearForm()">
+
+<i class="fa-solid fa-trash"></i>
+Clear Form
+
+</button>
+
+</div>
+
+</div>
+
+<div class="table-section">
+
+<h2>Purchasing Records</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+<th>Company</th>
+<th>Bill No</th>
+<th>Total</th>
+<th>Paid</th>
+<th>Balance</th>
+<th>Purchase Date</th>
+<th>Payment Date</th>
+<th>Method</th>
+<th>Status</th>
+<th>Delete</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableBody"></tbody>
+
+</table>
+
+</div>
+
+<div class="table-section">
+
+<h2>
+<i class="fa-solid fa-credit-card"></i>
+Credit Bills Preview
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Company</th>
+<th>Bill No</th>
+<th>Total Amount</th>
+<th>Paid Amount</th>
+<th>Remaining</th>
+<th>Payment Date</th>
+<th>Add Installment</th>
+
+</tr>
+
+</thead>
+
+<tbody id="creditTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+push,
+onValue,
+remove,
+update
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyAC3lYCEk1vRno_7yxbRC66DPRQlwKFXRw",
+
+    authDomain: "samarathunga-445fe.firebaseapp.com",
+
+    databaseURL:
+    "https://samarathunga-445fe-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId: "samarathunga-445fe",
+
+    storageBucket:
+    "samarathunga-445fe.firebasestorage.app",
+
+    messagingSenderId: "861841179476",
+
+    appId:
+    "1:861841179476:web:a69389a71bba3550a7bec1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+let purchases = [];
+let companies = [];
+
+const purchaseRef = ref(db,"purchases");
+const companyRef = ref(db,"companies");
+
+onValue(companyRef,(snapshot)=>{
+
+    companies = [];
+
+    snapshot.forEach((child)=>{
+
+        companies.push({
+            id:child.key,
+            ...child.val()
+        });
+    });
+
+    loadCompanies();
+});
+
+onValue(purchaseRef,(snapshot)=>{
+
+    purchases = [];
+
+    snapshot.forEach((child)=>{
+
+        purchases.push({
+            id:child.key,
+            ...child.val()
+        });
+    });
+
+    displayData();
+});
+
+window.addCompany = function(){
+
+    const company =
+    document.getElementById("newCompany").value;
+
+    if(company.trim() === ""){
+
+        alert("Enter Company Name");
+        return;
+    }
+
+    push(companyRef,{
+        name:company
+    });
+
+    document.getElementById("newCompany").value = "";
+}
+
+function loadCompanies(){
+
+    const dropdown =
+    document.getElementById("company");
+
+    dropdown.innerHTML =
+    `<option value="">Select Company</option>`;
+
+    companies.forEach(company=>{
+
+        dropdown.innerHTML += `
+
+        <option value="${company.name}">
+        ${company.name}
+        </option>
+
+        `;
+    });
+}
+
+window.addPurchase = function(){
+
+    const amount =
+    Number(document.getElementById("amount").value);
+
+    const paid =
+    Number(document.getElementById("paid").value);
+
+    const balance = amount - paid;
+
+    const status =
+    balance <= 0 ? "Paid" : "Pending";
+
+    const data = {
+
+        date:
+        document.getElementById("date").value,
+
+        company:
+        document.getElementById("company").value,
+
+        bill:
+        document.getElementById("bill").value,
+
+        amount,
+
+        paid,
+
+        balance,
+
+        purchaseDate:
+        document.getElementById("purchaseDate").value,
+
+        paymentDate:
+        document.getElementById("paymentDate").value,
+
+        method:
+        document.getElementById("method").value,
+
+        status
+    };
+
+    push(purchaseRef,data);
+
+    clearForm();
+
+    alert("Purchase Added Successfully");
+}
+
+function displayData(){
+
+    const table =
+    document.getElementById("tableBody");
+
+    const creditTable =
+    document.getElementById("creditTable");
+
+    table.innerHTML = "";
+
+    creditTable.innerHTML = "";
+
+    let total = 0;
+    let totalPaid = 0;
+    let totalCredit = 0;
+    let remaining = 0;
+
+    purchases.forEach((item,index)=>{
+
+        total += Number(item.amount);
+
+        totalPaid += Number(item.paid);
+
+        remaining += Number(item.balance);
+
+        if(item.balance > 0){
+
+            totalCredit += Number(item.balance);
+        }
+
+        const statusColor =
+        item.status === "Paid"
+        ? "var(--green)"
+        : "var(--red)";
+
+        table.innerHTML += `
+
+        <tr>
+
+        <td>${item.date}</td>
+        <td>${item.company}</td>
+        <td>${item.bill}</td>
+        <td>Rs. ${item.amount}</td>
+        <td>Rs. ${item.paid}</td>
+        <td>Rs. ${item.balance}</td>
+        <td>${item.purchaseDate}</td>
+
+        <td>
+
+        <input type="date"
+
+        value="${item.paymentDate}"
+
+        onchange="updatePaymentDate('${item.id}',this.value)"
+
+        style="
+        padding:8px;
+        border:none;
+        border-radius:10px;
+        background:#111;
+        color:white;">
+
+        </td>
+
+        <td>${item.method}</td>
+
+        <td>
+
+        <button class="status-btn"
+        style="background:${statusColor};">
+
+        ${item.status}
+
+        </button>
+
+        </td>
+
+        <td>
+
+        <button class="clear-btn"
+
+        onclick="deleteRow('${item.id}')">
+
+        <i class="fa-solid fa-trash"></i>
+
+        </button>
+
+        </td>
+
+        </tr>
+        `;
+
+        if(item.balance > 0){
+
+            creditTable.innerHTML += `
+
+            <tr>
+
+            <td>${item.company}</td>
+            <td>${item.bill}</td>
+            <td>Rs. ${item.amount}</td>
+            <td>Rs. ${item.paid}</td>
+
+            <td style="color:#ffcc70;">
+            Rs. ${item.balance}
+            </td>
+
+            <td>${item.paymentDate}</td>
+
+            <td>
+
+            <input type="number"
+            id="installment${index}"
+            placeholder="Amount"
+
+            style="
+            width:100px;
+            padding:8px;
+            border:none;
+            border-radius:10px;
+            background:#111;
+            color:white;">
+
+            <button class="add-btn"
+
+            onclick="addInstallment('${item.id}',${index})"
+
+            style="
+            padding:8px 10px;
+            margin-top:5px;">
+
+            Add
+
+            </button>
+
+            </td>
+
+            </tr>
+            `;
+        }
+
+    });
+
+    document.getElementById("totalPurchase").innerText =
+    "Rs. " + total;
+
+    document.getElementById("creditAmount").innerText =
+    "Rs. " + totalCredit;
+
+    document.getElementById("paidAmount").innerText =
+    "Rs. " + totalPaid;
+
+    document.getElementById("remainingCredit").innerText =
+    "Rs. " + remaining;
+}
+
+window.addInstallment = function(id,index){
+
+    const item =
+    purchases.find(p=>p.id===id);
+
+    const installment =
+    Number(document.getElementById(
+    `installment${index}`
+    ).value);
+
+    if(installment <= 0){
+
+        alert("Enter Valid Amount");
+        return;
+    }
+
+    const newPaid =
+    item.paid + installment;
+
+    let newBalance =
+    item.amount - newPaid;
+
+    let status =
+    "Pending";
+
+    if(newBalance <= 0){
+
+        newBalance = 0;
+
+        status = "Paid";
+    }
+
+    update(ref(db,`purchases/${id}`),{
+
+        paid:newPaid,
+
+        balance:newBalance,
+
+        status
+    });
+}
+
+window.updatePaymentDate =
+function(id,newDate){
+
+    update(ref(db,`purchases/${id}`),{
+
+        paymentDate:newDate
+    });
+}
+
+window.deleteRow = function(id){
+
+    remove(ref(db,`purchases/${id}`));
+}
+
+window.clearForm = function(){
+
+    document.querySelectorAll("input").forEach(input=>{
+
+        if(input.id !== "newCompany"){
+
+            input.value = "";
+        }
+    });
+}
+
+document.getElementById("search")
+
+.addEventListener("keyup",function(){
+
+    const value =
+    this.value.toLowerCase();
+
+    const rows =
+    document.querySelectorAll("tbody tr");
+
+    rows.forEach(row=>{
+
+        row.style.display =
+
+        row.innerText.toLowerCase()
+        .includes(value)
+
+        ? ""
+
+        : "none";
+    });
+});
+
+function updateClock(){
+
+    const now = new Date();
+
+    document.getElementById("clock").innerHTML =
+
+    now.toLocaleDateString() +
+
+    " " +
+
+    now.toLocaleTimeString();
+}
+
+setInterval(updateClock,1000);
+
+window.toggleMode = function(){
+
+    document.body.classList.toggle("light-mode");
+}
+
+</script>
+
+</body>
+</html>
+Firebase Database Rules
+Go to Firebase Realtime Database ? Rules and paste:
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+Then click:
+? Publish
+Your project is now fully connected to Firebase Realtime Database.
